@@ -13,15 +13,22 @@ def search():
     data = request.get_json()
     search_text = data.get('search_text', '')
     results_count = data.get('results_count', '')
+    topic_count = data.get('topic_count', '')
     num = 10
-    if results_count.isnumeric():
+    if results_count.isdigit():
         results_count = int(results_count)
         if 1 <= results_count <= 10:
             num = results_count
 
+    topic_num = 3
+    if topic_count.isdigit():
+        topic_count = int(topic_count)
+        if 1 <= topic_count <= 10:
+             topic_num = topic_count
+
     # Perform the logic for searching or displaying data here, and then return the results to the frontend
     # call the relevant model or perform database queries
-    formatted_topics = picmodeling.format_lda_topics(num)
+    formatted_topics = picmodeling.format_lda_topics(topic_num)
     search_result = retrieval_test.retrieve_tweets_with_query(search_text, num)
     # text_data = [['Good', 'Cybertruck', 'Model', 'evening', 'market'], ['Elon', 'Musk', 'make', 'rules', 'coin'],['Scroll', 'project', 'crypto', 'game', 'total']]
     # Example: Assume there is a variable named search_result to store the search results

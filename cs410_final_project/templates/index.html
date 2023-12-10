@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
     <title>Search App</title>
 </head>
 <body>
 
-<h1>title</h1>
+
+    
+<h1>Search App</h1>
 
 <form id="searchForm">
+    <label for="searchText">Search Text:</label>
     <input type="text" id="searchText" placeholder="Enter your search">
-    <input type="text" id="resultsCount" placeholder="Enter 1 to 10">
+    <br>
+    <label for="resultsCount">Customize Number of Results(optional):</label>
+    <input type="text" id="resultsCount" placeholder="Enter 1 to 10 (default 10)" style="width: 150px;">
+
+    <label for="topicCount">Customize Number of Topic(optional):</label>
+    <input type="text" id="topicCount" placeholder="Enter 1 to 10 (default 3)">
+    <br>
     <input type="submit" value="Search">
+
 </form>
 
 <div id="searchResults"></div>
@@ -32,6 +43,7 @@
 
         var searchText = document.getElementById("searchText").value;
         var resultsCount = document.getElementById("resultsCount").value;
+        var topicCount = document.getElementById("topicCount").value;
 
         // sent request
         fetch('/search', {
@@ -39,7 +51,7 @@
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({search_text: searchText, results_count: resultsCount}),
+            body: JSON.stringify({search_text: searchText, results_count: resultsCount, topic_count: topicCount}),
         })
         .then(response => response.json())
         .then(data => {
@@ -126,29 +138,6 @@
     // Create the bar chart using Plotly
     Plotly.newPlot(chartDiv, data, layout);
 }
-
-
-
-
-    // function displayWordClouds() {
-    //     const wordCloudContainer = document.getElementById('wordCloudContainer');
-
-    //     // Fetch WordCloud image URLs dynamically
-    //     const wordCloudUrls = [];
-    //     topics_num = 3;
-    //     for (let i = 0; i < topics_num; i++) {
-    //         wordCloudUrls.push(`../images/wordcloud_topic_${i}.png`);
-    //     }
-
-    //     // Loop through the WordCloud image URLs and create image elements
-    //     wordCloudUrls.forEach(url => {
-    //         const newImage = document.createElement('img');
-    //         newImage.src = url;
-    //         newImage.alt = 'WordCloud';
-    //         wordCloudContainer.appendChild(newImage);
-    //     });
-    // }
-
 
 </script>
 

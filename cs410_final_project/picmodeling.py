@@ -98,24 +98,3 @@ def format_lda_topics(topics_num):
 formatted_topics = format_lda_topics(3)
 print(formatted_topics)
 
-
-# # Iterate over the topic_id values
-# for i in range(topics_num):
-#     # Create a WordCloud for the current topic
-#     font_path = 'Country Market.ttf' 
-#     tmp_cloud = WordCloud(width=800, height=600, background_color="white", font_path = font_path)
-#     tmp_cloud.fit_words(dict(lda.show_topic(i, 50)))
-
-#     # Create a figure and axes for the subplot
-#     fig, ax = plt.subplots(figsize=(8, 6))
-
-#     # Display the WordCloud
-#     ax.imshow(tmp_cloud)
-#     ax.axis('off')  # Turn off the axis
-
-#     # Save the individual WordCloud image
-#     output_directory = 'images'
-#     os.makedirs(output_directory, exist_ok=True)
-#     wordcloud_image_path = os.path.join(output_directory, f'wordcloud_topic_{i}.png')
-#     plt.savefig(wordcloud_image_path, overwrite=True)
-#     plt.close()  # Close the figure to release resources
