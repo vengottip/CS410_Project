@@ -42,12 +42,13 @@ def retrieve_tweets_with_query(query, nums):
     # print(top_10)
 
     top_10_df = pd.DataFrame(top_10)
-    top_10_df['full_text'] = top_10_df['docno'].apply(lambda x: df[df['docno'] == str(x)]['text'].iloc[0])
-
+    top_10_df['text'] = top_10_df['docno'].apply(lambda x: df[df['docno'] == str(x)]['text'].iloc[0])
+    top_10_df['extracted_Sentiment_label'] = top_10_df['docno'].apply(lambda x: df[df['docno'] == str(x)]['extracted_Sentiment_label'].iloc[0])
+    
     # Now top_10_df contains the full text of each tweet alongside the original search result data
     # return top_10_df[['docno', 'full_text', 'rank', 'query']]
     # print(top_10_df[['docno', 'full_text', 'rank', 'query']])
-    result_list = top_10_df[['docno', 'full_text', 'rank', 'query']].astype(str).values.tolist()
+    result_list = top_10_df[['docno', 'text', 'extracted_Sentiment_label' ,'rank', 'query']].astype(str).values.tolist()
 
     # Export the DataFrame to a CSV file
     output_csv_file = 'IF_output.csv'
