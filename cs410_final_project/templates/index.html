@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <title>Search App</title>
+</head>
+<body>
+
+
+    
+<h1>Search App</h1>
+
+<form id="searchForm">
+    <label for="searchText">Search Text:</label>
+    <input type="text" id="searchText" placeholder="Enter your search">
+    <br>
+    <label for="resultsCount">Customize Number of Results(optional):</label>
+    <input type="text" id="resultsCount" placeholder="Enter 1 to 10 (default 10)" style="width: 150px;">
+
+    <label for="topicCount">Customize Number of Topic(optional):</label>
+    <input type="text" id="topicCount" placeholder="Enter 1 to 10 (default 3)">
+    <br>
+    <input type="submit" value="Search">
+
+</form>
+
+<div id="searchResults"></div>
+
+<div id="barchart"> </div>
+
+<div id="chart"></div>
+
+
+
+
+
+<script>
+    document.getElementById("searchForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var searchText = document.getElementById("searchText").value;
+        var resultsCount = document.getElementById("resultsCount").value;
+        var topicCount = document.getElementById("topicCount").value;
+
+        // sent request
+        fetch('/search', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({search_text: searchText, results_count: resultsCount, topic_count: topicCount}),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // display the result
+            displayResults(data);
+            // Create and display the chart
+            createChart(data);
+            // displayWordClouds();
+            createbarChart(data.formatted_topics);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+    function displayResults(data) {
+        var results = data.search_result;
+        var searchResultsDiv = document.getElementById("searchResults");
+        searchResultsDiv.innerHTML = ""; 
+
+        if (results && results.length > 0) {
+
+            var resultList = document.createElement("ul");
+
+            results.forEach(function (result) {
+                var listItem = document.createElement("li");
+                listItem.textContent = result;
+                resultList.appendChild(listItem);
+            });
+
+            searchResultsDiv.appendChild(resultList);
+        } else {
+            searchResultsDiv.textContent = "No results found.";
+        }
+    }
+
+    function createChart(data) {
+        var chartDiv = document.getElementById("chart");
+        // Extract labels and values from Data
+        var labels = Object.keys(data.chart_data);
+        var values = Object.values(data.chart_data);
+
+        // Create a bar chart using Plotly
+        Plotly.newPlot(chartDiv, [{
+            labels: labels,
+            values: values,
+            type: 'pie'
+        }], {
+            title: 'Pie Chart'
+        });
+    }
+
+    function createbarChart(topics) {
+    var chartDiv = document.getElementById("barchart");
+
+    // Extract topic IDs, terms, and probabilities from data
+    var topicIDs = topics.map(topic => topic.topic_id);
+    var terms = topics.map(topic => topic.terms);
+    var probabilities = topics.map(topic => topic.terms.map(term => term[1]));
+
+    // Create data for the bar chart
+    var data = [];
+    for (var i = 0; i < topicIDs.length; i++) {
+        data.push({
+            x: terms[i].map(term => term[0]),
+            y: probabilities[i],
+            type: 'bar',
+            name: `Topic ${topicIDs[i]}`
+        });
+    }
+
+    // Create layout for the bar chart
+    var layout = {
+        barmode: 'group',
+        title: 'Topic Terms Probability',
+        xaxis: {
+            title: 'Terms'
+        },
+        yaxis: {
+            title: 'Probability'
+        }
+    };
+
+    // Create the bar chart using Plotly
+    Plotly.newPlot(chartDiv, data, layout);
+}
+
+</script>
+
+</body>
+</html>
