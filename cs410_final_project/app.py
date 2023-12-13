@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import retrieval_test
-import picmodeling
+import topicModeling
 app = Flask(__name__)
 
 @app.route('/')
@@ -28,8 +28,9 @@ def search():
 
     # Perform the logic for searching or displaying data here, and then return the results to the frontend
     # call the relevant model or perform database queries
-    formatted_topics = picmodeling.format_lda_topics(topic_num)
+    formatted_topics = topicModeling.format_lda_topics(topic_num)
     search_result = retrieval_test.retrieve_tweets_with_query(search_text, num)
+    retrieval_test.retrieve_tweets_with_query(search_text, 1000)
     # text_data = [['Good', 'Cybertruck', 'Model', 'evening', 'market'], ['Elon', 'Musk', 'make', 'rules', 'coin'],['Scroll', 'project', 'crypto', 'game', 'total']]
     # Example: Assume there is a variable named search_result to store the search results
     # search_result = ["Result 1", "Result 2", "Result 3"]
