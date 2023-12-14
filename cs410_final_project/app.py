@@ -30,7 +30,7 @@ def search():
     # call the relevant model or perform database queries
     formatted_topics = topicModeling.format_lda_topics(topic_num)
     search_result = retrieval_test.retrieve_tweets_with_query(search_text, num)
-    retrieval_test.retrieve_tweets_with_query(search_text, 1000)
+    retrieval_test.retrieve_tweets_with_query(search_text, 100)
     # text_data = [['Good', 'Cybertruck', 'Model', 'evening', 'market'], ['Elon', 'Musk', 'make', 'rules', 'coin'],['Scroll', 'project', 'crypto', 'game', 'total']]
     # Example: Assume there is a variable named search_result to store the search results
     # search_result = ["Result 1", "Result 2", "Result 3"]
