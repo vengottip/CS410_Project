@@ -12,7 +12,7 @@ from gensim.models import LdaModel, TfidfModel
 #nltk.download('punkt')
 nltk.download('stopwords')
 
-data_path ='final_dataset.csv'
+data_path ='IF_output.csv'
 retrival_output = pd.read_csv(data_path)
 
 text = retrival_output["text"].astype(str).str.replace(r'#\w+', '', regex=True)
