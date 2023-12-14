@@ -1,65 +1,29 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
-# TF-IDF Feature Generation
-from sklearn.feature_extraction.text import TfidfVectorizer
-from nltk.tokenize import RegexpTokenizer
-from wordcloud import WordCloud
-from wordcloud import STOPWORDS
-import matplotlib.pyplot as plt
-import os
-
-data_path ='final_dataset.csv'
-text = pd.read_csv(data_path)
-
-subset_top = text["text"].astype(str).str.replace(r'#\w+', '', regex=True)
-subset_top = subset_top.head(100)
-
-# Initialize regex tokenizer
-tokenizer = RegexpTokenizer(r'\w+')
-
-# # Vectorize document using TF-IDF
-tf_idf_vect = TfidfVectorizer(lowercase=True,
-                        stop_words='english',
-                        ngram_range = (1,2),
-                        max_df=0.5,
-                        min_df=0.01,
-                        tokenizer = tokenizer.tokenize)
-
-# Fit and Transfrom Text Data
-model_data = tf_idf_vect.fit_transform(subset_top)
-
-# Check Shape of Count Vector
-model_data.shape
-
-
-"""# **LDA model**"""
 
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import RegexpTokenizer
-from nltk.stem.snowball import SnowballStemmer
 
 import gensim.corpora as corpora
 from gensim.models import LdaModel, TfidfModel
 
-nltk.download('punkt')
+#nltk.download('punkt')
 nltk.download('stopwords')
 
+data_path ='final_dataset.csv'
+retrival_output = pd.read_csv(data_path)
+
+text = retrival_output["text"].astype(str).str.replace(r'#\w+', '', regex=True)
 
 # RegEx for words with length > 3
 tokenizer = RegexpTokenizer(r'\b[a-zA-Z]{3,}\b')
-tokenized_des = [tokenizer.tokenize(s) for s in subset_top]
+tokenized_text = [tokenizer.tokenize(s) for s in text]
 
 # remove stop words
 stop_words = stopwords.words('english')
-tokenized_des = [[w for w in s if w not in stop_words] for s in tokenized_des]
-
-'''
-# stemming the words
-stemmer = SnowballStemmer("english")
-tokenized_des = [[stemmer.stem(w) for w in s] for s in tokenized_des]
-'''
+tokenized_des = [[w for w in s if w not in stop_words] for s in tokenized_text]
 
 
 # create corpus
@@ -73,7 +37,7 @@ low_value_words = []
 for bow in corpus_des:
     low_value_words += [id for id, value in tfidf_model[bow] if value < 0.1]
 
-[dct_des.get(low_value_words[i]) for i in range(10)]
+#[dct_des.get(low_value_words[i]) for i in range(10)]
 
 # filter words from the dictionary and the corpus
 dct_des.filter_tokens(bad_ids=low_value_words)
@@ -97,4 +61,3 @@ def format_lda_topics(topics_num):
 
 formatted_topics = format_lda_topics(3)
 print(formatted_topics)
-
