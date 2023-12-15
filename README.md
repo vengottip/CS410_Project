@@ -2,28 +2,14 @@
 
 # CS410 Project: TweetInsight Explorer for Technology
 
+## Overview
 
-This study is to replicate the paper: Iva Bojic, Qi Chwen Ong, Megh Thakkar, Esha Kamran, Irving Yu Le Shua, Rei Ern Jaime Pang, Jessica Chen, Vaaruni Nayak, Shafiq Joty, Josip Car. SleepQA: A Health Coaching Dataset on Sleep for Extractive Question Answering. Proceedings of Machine Learning for Health (ML4H) 2022 Workshop.
-
-The codebase of the reproduction study is built upon SleepQA repo https://github.com/IvaBojic/SleepQA and Dense Passage Retrieval (DPR) repo https://github.com/facebookresearch/DPR, which was used by the authors of SleepQA to build their question answering (QA) pipeline. 
-
-New files created in this study are as belows:
-- SleepQA3x data augumentation: data_aug/aug.py, data_aug/req.txt
-- SleepQA3x train dataset: data/training/sleep-train_aug.json, data/training/sleep-train_aug2.json
-- Reader only evaluation: models/reader_test.py
-- Dependencies: requirements.txt
-- Convert model checkpoints to pytorch: models/convert_reader.sh, models/convert.sh
-- Best model checkpoints: models/question_encoder/ folder, models/ctx_encoder/ folder, models/reader/ folder
-
+Our system, the TechSentiment Insight Analyzer, developed for the CS410 final project, empowers users to gain insights into sentiments in the technology industry and leading tech companies. Users input specific queries, and the system displays relevant tweets, identifies and presents the topics expressed in the relevant tweets and frequent terms used in the topics, offering an overview of the public discourse related to the query. Our system also performs sentiment analysis to show distribution of positive, negative, and neutral sentiments in the relevant tweets.
 
 
 ## Dependencies 
 Required packages are listed in requirements.txt
 
-
-## Overview
-
-Our system, the TechSentiment Insight Analyzer, developed for the CS410 final project, empowers users to gain insights into sentiments in the technology industry and leading tech companies. Users input specific queries, and the system displays relevant tweets, identifies and presents the topics expressed in the relevant tweets and frequent terms used in the topics, offering an overview of the public discourse related to the query. Our system also performs sentiment analysis to show distribution of positive, negative, and neutral sentiments in the relevant tweets.
 
 
 ```
