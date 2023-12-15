@@ -11,16 +11,16 @@
 
 
     
-<h1>Search App for Tech Industry Sentiment</h1>
+<h1>TweetInsight Explorer</h1>
 
 <form id="searchForm">
     <label for="searchText">Search Text:</label>
     <input type="text" id="searchText" placeholder="Enter your search">
     <br>
-    <label for="resultsCount">Customize Number of Results(optional):</label>
+    <label for="resultsCount">Number of Results(optional):</label>
     <input type="text" id="resultsCount" placeholder="Enter 1 to 10 (default 10)" style="width: 150px;">
 
-    <label for="topicCount">Customize Number of Topic(optional):</label>
+    <label for="topicCount">Number of Topics (optional):</label>
     <input type="text" id="topicCount" placeholder="Enter 1 to 10 (default 3)">
     <br>
     <input type="submit" value="Search">
@@ -100,7 +100,7 @@
             values: values,
             type: 'pie'
         }], {
-            title: 'Sentiment Analysis'
+            title: 'Sentiment Distribution'
         });
     }
 
