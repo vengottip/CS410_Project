@@ -63,10 +63,10 @@ The LDA model outputs a set of topics, each represented as a distribution of wor
 
 ## File list: 
 
-app.py: 
-scraper.py: 
-retrievel_test.py:
-topicModeling.py:
-IF_output.csv:
-final_dataset.csv
+- app.py: 
+- scraper.py: 
+- retrievel_test.py:
+- topicModeling.py:
+- IF_output.csv:
+- final_dataset.csv
 
