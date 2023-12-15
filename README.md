@@ -13,8 +13,8 @@ Our system, TweetInsight Explorer for Technology, developed for the CS410 final 
 
 Venkata Gottiparthi,
 Qi Zhou,
-Hannah Ke,
 Zhao Li,
+Hannah Ke,
 Yixin Xu
 
 
