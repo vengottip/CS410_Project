@@ -11,16 +11,16 @@
 
 
     
-<h1>Search App</h1>
+<h1>TweetInsight Explorer</h1>
 
 <form id="searchForm">
-    <label for="searchText">Search Text:</label>
+    <label for="searchText">Search:</label>
     <input type="text" id="searchText" placeholder="Enter your search">
     <br>
-    <label for="resultsCount">Customize Number of Results(optional):</label>
+    <label for="resultsCount">Number of Results (optional):</label>
     <input type="text" id="resultsCount" placeholder="Enter 1 to 10 (default 10)" style="width: 150px;">
 
-    <label for="topicCount">Customize Number of Topic(optional):</label>
+    <label for="topicCount">Number of Topic :</label>
     <input type="text" id="topicCount" placeholder="Enter 1 to 10 (default 3)">
     <br>
     <input type="submit" value="Search">
@@ -100,7 +100,7 @@
             values: values,
             type: 'pie'
         }], {
-            title: 'Pie Chart'
+            title: 'Sentiment Distribution'
         });
     }
 
@@ -126,7 +126,7 @@
     // Create layout for the bar chart
     var layout = {
         barmode: 'group',
-        title: 'Topic Terms Probability',
+        title: 'Topics and Top Terms',
         xaxis: {
             title: 'Terms'
         },
@@ -143,3 +143,4 @@
 
 </body>
 </html>
+
