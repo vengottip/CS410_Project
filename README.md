@@ -60,7 +60,9 @@ We use PyTerrier which is a comprehensive and scalable toolkit for information r
 ## Text Mining and Analysis 
 
 ### Sentiment Analysis
-
+The sentiment analysis of the text data scraped from twitter was done using a pre-trained sentiment analysis model.( "lxyuan/distilbert-base-multilingual-cased-sentiments-student,") based on the DistilBERT architecture. DistilBERT is a smaller and faster version of BERT while retaining much of its performance.
+The pipeline function from transformers is used to load this pre-trained model for sentiment analysis.  Pandas library is used  to handle File and dataframe operations.
+The model calculates three sentiment scores for each record of text which are stored in a column of the dataframe. One score is for the positive sentiment, one for negative and one for neutral. Programmatically the highest score and the corresponding sentiment label are extracted and stored in two other columns in the dataframe.
 
 ### Topic Modeling
 
@@ -76,6 +78,7 @@ The LDA model outputs a set of topics, each represented as a distribution of wor
 - app.py: 
 - scraper.py: 
 - retrievel_test.py:
+- Sentiment_Analysis.py
 - topicModeling.py:
 - IF_output.csv:
 - final_dataset.csv
