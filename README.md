@@ -11,10 +11,10 @@ Our system, TweetInsight Explorer for Technology, developed for the CS410 final 
 
 ## Team member: 
 
-Venkata Gottiparthi
-Qi Zhou
-Hannah Ke
-Zhao Li
+Venkata Gottiparthi,
+Qi Zhou,
+Hannah Ke,
+Zhao Li,
 Yixin Xu
 
 
