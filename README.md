@@ -1,6 +1,8 @@
 
 
-# CS410 Project: TweetInsight Explorer for Technology
+# CS410 Project
+
+App: TweetInsight Explorer for Technology
 
 ## Overview
 
