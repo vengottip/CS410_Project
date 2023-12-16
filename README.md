@@ -23,7 +23,7 @@ https://mediaspace.illinois.edu/media/t/1_rmfrdged
 
 ## 4. How to use the App
 * Download the source folder
-* Install the dependencies listed in requirements.txt file, open a terminal or command prompt, navigate to your project's directory, and run the following command:
+* Install the dependencies listed in requirements.txt file, open a terminal or command prompt, and run the following command:
   
 ```
 pip install -r requirements.txt
