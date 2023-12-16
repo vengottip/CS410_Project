@@ -46,17 +46,6 @@ To construct our dataset of tweets, we collected the most recent posts using has
 We utilized the ntscraper library for scraping purposes. Following that, we conducted data cleaning to remove URLs, emojis, symbols, and mentions of Twitter users to preserve user privacy. In total, our dataset consists of 21,600 tweets.
 
 
-```
-pip3 install ntscraper
-pip3 install nltk
-pip3 install demoji
-pip3 install glob
-
-```
-
-
-
-
 ## Text Retrieval
 
 We use PyTerrier which is a comprehensive and scalable toolkit for information retrieval. We index the content (text) and document number for faster retrieval later. After comparing different weighting models such as BM25 and DirichletLM, we choose BM25 for its effectiveness and robustness. Then we obtain the result from queries and list the most relevant contents to the UI.
