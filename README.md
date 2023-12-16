@@ -26,11 +26,16 @@ https://mediaspace.illinois.edu/media/t/1_rmfrdged
 * Install the dependencies listed in requirements.txt file. To do so, open a terminal or command prompt, and run the following command:
   
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 * Start the Flask Server:
     * Run the app.py within the source folder to start the Flask server.
+      
+ ```
+python3 app.py
+```
+      
 * Access the Web Interface:
     * Open a web browser and go to http://127.0.0.1:5000/.
     * You will see the "TweetInsight Explorer" interface with a search form.
