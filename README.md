@@ -4,12 +4,12 @@
 
 App: TweetInsight Explorer for Technology
 
-## Overview
+## 1. Overview
 
 Our system, TweetInsight Explorer for Technology, developed for the CS410 final project, empowers users to gain insights into sentiments in the technology industry and leading tech companies. Users input specific queries, and the system displays relevant tweets, identifies and presents the topics expressed in the relevant tweets and frequent terms used in the topics, offering an overview of the public discourse related to the query. Our system also performs sentiment analysis to show distribution of positive, negative, and neutral sentiments in the relevant tweets.
 
 
-## Team member: 
+## 2. Team member: 
 
 Venkata Gottiparthi,
 Qi Zhou,
@@ -18,10 +18,10 @@ Hannah Ke,
 Yixin Xu
 
 
-## Video:
+## 3. Video:
 https://mediaspace.illinois.edu/media/t/1_rmfrdged
 
-## How to use the App
+## 4. How to use the App
 * Download the source folder
 * Start the Flask Server:
     * Run the app.py Python script to start the Flask server.
@@ -36,33 +36,35 @@ https://mediaspace.illinois.edu/media/t/1_rmfrdged
     * The search results and a sentiment distribution pie chart will be displayed.
 
 
-## Dependencies 
+## 5. Dependencies 
 Required packages are listed in requirements.txt
 
 
-## Dataset Creation:
+## 6. Dataset Creation:
 
 To construct our dataset of tweets, we collected the most recent posts using hashtags associated with major tech companies. 
-We utilized the ntscraper library for scraping purposes. Following that, we conducted data cleaning to remove URLs, emojis, symbols, and mentions of Twitter users to preserve user privacy. In total, our dataset consists of 21,600 tweets. Apart from tweets, our dataset also includes one column for sentiment labels which is infered 
+We utilized the ntscraper library for scraping purposes. Following that, we conducted data cleaning to remove URLs, emojis, symbols, and mentions of Twitter users to preserve user privacy. In total, our dataset consists of 21,600 tweets. 
+
+After the dataset (final_dataset.csv) was created, sentiment analysis was done on the entire dataset as described in 8.1 below to generate the sentiment label of the data, and the same was added as a column in the dataset for further analysis.
 
 
-## Text Retrieval
+## 7. Text Retrieval
 
 We use PyTerrier which is a comprehensive and scalable toolkit for information retrieval. We index the content (text) and document number for faster retrieval later. After comparing different weighting models such as BM25 and DirichletLM, we choose BM25 for its effectiveness and robustness. Then we obtain the result from queries and list the most relevant contents to the UI.
 
-## Text Mining and Analysis 
+## 8. Text Mining and Analysis 
 
-### Sentiment Analysis
+### 8.1. Sentiment Analysis
 The sentiment analysis of the text data scraped from twitter was done using a pre-trained sentiment analysis model.( "lxyuan/distilbert-base-multilingual-cased-sentiments-student,") based on the DistilBERT architecture. DistilBERT is a smaller and faster version of BERT while retaining much of its performance.
 The pipeline function from transformers is used to load this pre-trained model for sentiment analysis.  Pandas library is used  to handle File and dataframe operations.
 The model calculates three sentiment scores for each record of text which are stored in a column of the dataframe. One score is for the positive sentiment, one for negative and one for neutral. Programmatically the highest score and the corresponding sentiment label are extracted and stored in two other columns in the dataframe.
 
-### Topic Modeling
+### 8.2. Topic Modeling
 
 We use Latent Dirichlet Allocation (LDA) from the Gensim library for topic modeling. LDA is a probabilistic generative model that helps uncover hidden structures within a collection of documents, it assumes that documents are mixtures of topics, and each topic is a mixture of words.  We preprocess the data by removing hashtag words, stopwords, filtering out words with less than 3 characters, and tokenizing the text. 
 The LDA model outputs a set of topics, each represented as a distribution of words.
 
-## UI
+## 9. UI
 
 - Frontend (HTML and JavaScript):
 Search form structure and dynamic UI updates.
