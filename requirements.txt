@@ -1,9 +1,14 @@
-transformers==4.35.2  # Specify the version you want
-pandas==2.1.3         # Specify the version you want
-PyTerrier=0.10.0      # Specify the version you want
-python-terrier
-nltk
-gensim
-ntscraper
-glob
-demoji
+pandas==2.1.3         
+PyTerrier=0.10.0     
+python-terrier==0.10.0 
+nltk==3.7             
+gensim==4.3.2      
+Flask==2.2.3
+Plotly==5.14.1
+
+# packages below are not necessary to run the app, they are only for data preparation.
+#transformers==4.35.2  # This is for sentiment analysis
+#ntscraper==0.3.4    # This is scraper used to scraping tweets
+#demoji==1.1.0       # This is to remove emojis and symbols for data cleaning
+
+
