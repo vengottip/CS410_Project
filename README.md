@@ -30,13 +30,14 @@ pip3 install -r requirements.txt
 ```
 
 * Start the Flask Server:
-    * Run the app.py within the source folder to start the Flask server.
+    * Run the app.py within the source folder to start the Flask server. Run the following command:
       
  ```
 python3 app.py
 ```
       
 * Access the Web Interface:
+    * Wait until the server finishes loading and the URL (http://127.0.0.1:5000/) is shown in terminal
     * Open a web browser and go to http://127.0.0.1:5000/.
     * You will see the "TweetInsight Explorer" interface with a search form.
 * Perform a Search:
