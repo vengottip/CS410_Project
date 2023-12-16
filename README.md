@@ -25,10 +25,10 @@ https://mediaspace.illinois.edu/media/t/1_rmfrdged
 * Download the source folder
 * Install the dependencies listed in requirements.txt file, open a terminal or command prompt, navigate to your project's directory, and run the following command:
   
-"""
-   pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 
-"""
 
 * Start the Flask Server:
     * Run the app.py Python script to start the Flask server.
