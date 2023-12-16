@@ -45,7 +45,7 @@ python3 app.py
     * Optionally, specify the number of results and topics.
     * Click the "Search" button.
 * View Results:
-    * The search results and a sentiment distribution pie chart will be displayed.
+    * The relevent tweets, a bar chart for topic modeling and a pie chart for sentiment distribution pie chart will be displayed.
 
 
 ## 5. Dependencies 
