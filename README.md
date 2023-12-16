@@ -77,6 +77,3 @@ Bar chart for topic terms probabilities.
 - Styling (CSS):
 Enhancements and specific adjustments.
 
-
-
-
