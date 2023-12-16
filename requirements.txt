@@ -5,6 +5,7 @@ nltk==3.7
 gensim==4.3.2      
 Flask==2.2.3
 Plotly==5.14.1
+Werkzeug==2.2.3
 
 # packages below are not necessary to run the app, they are only for data preparation.
 #transformers==4.35.2  # This is for sentiment analysis
