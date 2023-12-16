@@ -29,7 +29,6 @@ https://mediaspace.illinois.edu/media/t/1_rmfrdged
 pip install -r requirements.txt
 ```
 
-
 * Start the Flask Server:
     * Run the app.py within the source folder to start the Flask server.
 * Access the Web Interface:
