@@ -22,6 +22,7 @@ Yixin Xu
 https://mediaspace.illinois.edu/media/t/1_rmfrdged
 
 ## How to use the App
+* Download the source folder
 * Start the Flask Server:
     * Run the app.py Python script to start the Flask server.
 * Access the Web Interface:
