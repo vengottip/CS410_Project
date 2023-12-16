@@ -28,7 +28,7 @@ https://mediaspace.illinois.edu/media/t/1_rmfrdged
     * Open a web browser and go to http://127.0.0.1:5000/.
     * You will see the "TweetInsight Explorer" interface with a search form.
 * Perform a Search:
-    * Enter a search query in the input field (e.g., “meta data”).
+    * Enter a search query in the input field (e.g., “IBM AI innovation”).
     * Optionally, specify the number of results and topics.
     * Click the "Search" button.
 * View Results:
