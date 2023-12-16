@@ -75,14 +75,3 @@ Bar chart for topic terms probabilities.
 - Styling (CSS):
 Enhancements and specific adjustments.
 
-
-## File list: 
-
-- app.py: 
-- scraper.py: 
-- retrievel_test.py:
-- Sentiment_Analysis.py
-- topicModeling.py:
-- IF_output.csv:
-- final_dataset.csv
-
