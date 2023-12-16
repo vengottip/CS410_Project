@@ -39,17 +39,20 @@ https://mediaspace.illinois.edu/media/t/1_rmfrdged
 Required packages are listed in requirements.txt
 
 
-
-```
-code here
-```
-
-
-
 ## Dataset Creation:
 
 To construct our dataset of tweets, we collected the most recent posts using hashtags associated with major tech companies. 
 We utilized the ntscraper library for scraping purposes. Following that, we conducted data cleaning to remove URLs, emojis, symbols, and mentions of Twitter users to preserve user privacy. In total, our dataset consists of 21,600 tweets.
+
+
+```
+pip3 install ntscraper
+pip3 install nltk
+pip3 install demoji
+pip3 install glob
+
+```
+
 
 
 
