@@ -71,15 +71,15 @@ The LDA model outputs a set of topics, each represented as a distribution of wor
 
 ## UI
 
-Frontend (HTML and JavaScript):
+- Frontend (HTML and JavaScript):
 Search form structure and dynamic UI updates.
-Backend (Flask and Python Scripts):
+- Backend (Flask and Python Scripts):
 Flask routes for home and search.
 Python scripts(eg. tweet retrieval, topic formatting).
-Visualizations (Plotly):
+- Visualizations (Plotly):
 Pie chart for overall data.
 Bar chart for topic terms probabilities.
-Styling (CSS):
+- Styling (CSS):
 Enhancements and specific adjustments.
 
 
