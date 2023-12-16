@@ -57,7 +57,7 @@ Required packages are listed in requirements.txt
 To construct our dataset of tweets, we collected the most recent posts using hashtags associated with major tech companies. 
 We utilized the ntscraper library for scraping purposes. Following that, we conducted data cleaning to remove URLs, emojis, symbols, and mentions of Twitter users to preserve user privacy. In total, our dataset consists of 21,600 tweets. 
 
-After the dataset (final_dataset.csv) was created, sentiment analysis was done on the entire dataset as described in 8.1 below to generate the sentiment label of the data, and the same was added as a column in the dataset for further analysis.
+After the dataset (final_dataset.csv) was created, sentiment analysis was done on the entire dataset as described in 8.1 below to generate the sentiment label for each tweet, and the same was added as a column in the dataset for further analysis.
 
 
 ## 7. Text Retrieval
