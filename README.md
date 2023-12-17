@@ -22,7 +22,6 @@ Yixin Xu
 https://mediaspace.illinois.edu/media/t/1_rmfrdged
 
 ## 4. How to use the App
-* The app has been developed and tested successfully using python versions 3.9.12 and 3.8.9
 * Download the source folder and requirements.txt
 * Install the dependencies listed in requirements.txt file. To do so, open a terminal or command prompt, and run the following command:
   
