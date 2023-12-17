@@ -21,7 +21,7 @@ Yixin Xu
 ## 3. Video:
 https://mediaspace.illinois.edu/media/t/1_rmfrdged
 
-When testing our app, the results (retrieved tweets, topic and terms, sentiment distribution) you obtain with the same query may differ from those shown in our demo, because we have expanded our dataset (adding more tweets) since the demo was created. However, all functionalities remain unchanged.
+When testing our app, the results (retrieved tweets, topic and terms, sentiment distribution) you obtain with the same query may differ from those shown in our demo, because we have augumented our dataset (adding more tweets) since the demo was created. However, all functionalities remain unchanged.
 
 ## 4. How to use the App
 * Download the source folder and requirements.txt
