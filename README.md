@@ -6,7 +6,7 @@ App: TweetInsight Explorer for Technology
 
 ## 1. Overview
 
-Our system, TweetInsight Explorer for Technology, developed for the CS410 final project, empowers users to gain insights into sentiments in the technology industry and leading tech companies. Users input specific queries, and the system displays relevant tweets, identifies and presents the topics expressed in the relevant tweets and frequent terms used in the topics, offering an overview of the public discourse related to the query. Our system also performs sentiment analysis to show distribution of positive, negative, and neutral sentiments in the relevant tweets.
+Our app, TweetInsight Explorer for Technology, developed for the CS410 final project, empowers users to gain insights into topics and sentiments in the technology industry. Users input specific queries, and the system displays relevant tweets, identifies and presents the topics expressed in the relevant tweets and frequent terms used in the topics, offering an overview of the public discourse related to the query. Our system also performs sentiment analysis to show distribution of positive, negative, and neutral sentiments in the relevant tweets.
 
 
 ## 2. Team member: 
@@ -22,10 +22,23 @@ Yixin Xu
 https://mediaspace.illinois.edu/media/t/1_rmfrdged
 
 ## 4. How to use the App
-* Download the source folder
+* The app has been developed and tested successfully using python versions 3.9.12 and 3.8.9
+* Download the source folder and requirements.txt
+* Install the dependencies listed in requirements.txt file. To do so, open a terminal or command prompt, and run the following command:
+  
+```
+pip3 install -r requirements.txt
+```
+
 * Start the Flask Server:
-    * Run the app.py Python script to start the Flask server.
+    * Run the app.py within the source folder to start the Flask server. Run the following command:
+      
+ ```
+python3 app.py
+```
+      
 * Access the Web Interface:
+    * Wait until the server finishes loading and the URL (http://127.0.0.1:5000/) is shown in terminal
     * Open a web browser and go to http://127.0.0.1:5000/.
     * You will see the "TweetInsight Explorer" interface with a search form.
 * Perform a Search:
@@ -33,7 +46,7 @@ https://mediaspace.illinois.edu/media/t/1_rmfrdged
     * Optionally, specify the number of results and topics.
     * Click the "Search" button.
 * View Results:
-    * The search results and a sentiment distribution pie chart will be displayed.
+    * The relevent tweets, a bar chart for topic modeling and a pie chart for sentiment distribution pie chart will be displayed.
 
 
 ## 5. Dependencies 
@@ -45,7 +58,7 @@ Required packages are listed in requirements.txt
 To construct our dataset of tweets, we collected the most recent posts using hashtags associated with major tech companies. 
 We utilized the ntscraper library for scraping purposes. Following that, we conducted data cleaning to remove URLs, emojis, symbols, and mentions of Twitter users to preserve user privacy. In total, our dataset consists of 21,600 tweets. 
 
-After the dataset (final_dataset.csv) was created, sentiment analysis was done on the entire dataset as described in 8.1 below to generate the sentiment label of the data, and the same was added as a column in the dataset for further analysis.
+After the dataset (final_dataset.csv) was created, sentiment analysis was done on the entire dataset as described in 8.1 below to generate the sentiment label for each tweet, and the same was added as a column in the dataset for further analysis.
 
 
 ## 7. Text Retrieval
