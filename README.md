@@ -86,8 +86,8 @@ Search form structure and dynamic UI updates.
 Flask routes for home and search.
 Python scripts(eg. tweet retrieval, topic formatting).
 - Visualizations (Plotly):
-Pie chart for overall data.
 Bar chart for topic terms probabilities.
+Pie chart for sentiment distribution
 - Styling (CSS):
 Enhancements and specific adjustments.
 
